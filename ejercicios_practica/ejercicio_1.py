@@ -11,7 +11,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-
 if __name__ == '__main__':
     print("Bienvenidos a otra clase de Inove con Python")
     print("Line Plot")
@@ -34,5 +33,14 @@ if __name__ == '__main__':
     # Darle color a la línea a su elección
 
     # Crear acá su gráfico
+    grafico = plt.figure()
+    grafico.suptitle('Graficar Y=X**2', fontsize=14)
+    ax = grafico.add_subplot()
+
+    ax.plot(x, y, c='blue', marker='*', label='y=x**2')
+    ax.legend()
+    ax.grid()
+    ax.set_facecolor('whitesmoke')
+    plt.show()      
 
     print("terminamos")

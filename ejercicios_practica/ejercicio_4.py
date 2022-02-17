@@ -8,6 +8,10 @@
 # que aparecen en verde con el hashtag "#"
 
 # Ejercicios de matplotlib
+from cProfile import label
+from tkinter import Y
+from matplotlib import markers
+from matplotlib.cbook import ls_mapper
 import numpy as np
 import matplotlib.pyplot as plt
 
@@ -53,5 +57,46 @@ if __name__ == '__main__':
     # Colocar una grilla a elección
 
     # Crear acá su gráfico
+
+    grafico = plt.figure()
+    grafico.suptitle('Grafico ejemplo 4')
+    fig_1 = grafico.add_subplot(2, 2, 1)
+    fig_2 = grafico.add_subplot(2, 2, 2)
+    fig_3 = grafico.add_subplot(2, 2, 3)
+    fig_4 = grafico.add_subplot(2, 2, 4)
+
+    fig_1.plot(x, y1, c='red', marker= '*')
+    fig_1.set_facecolor('white')
+    fig_1.grid(ls='dashed')
+    fig_1.set_title('Grafico "cubo"', fontsize= 10) 
+    fig_1.set_ylabel('Eje Y - Grafico 1', fontsize= 6)
+    fig_1.set_xlabel('Eje X - Grafico 1', fontsize= 6)
+    fig_1.legend('Y= X ** 2')
+
+    fig_2.plot(x, y2, c='blue', marker= '*')
+    fig_2.set_facecolor('white')
+    fig_2.grid(ls='dashed')
+    fig_2.set_title('Grafico "cubo"', fontsize= 10)
+    fig_2.set_ylabel('Eje Y - Grafico 2', fontsize= 6)
+    fig_2.set_xlabel('Eje X - Grafico 2', fontsize= 6)
+    fig_2.legend('Y= X ** 3')   
+
+    fig_3.plot(x, y3, c='green', marker= '*')
+    fig_3.set_facecolor('white')
+    fig_3.grid(ls='dashed')
+    fig_3.set_title('Grafico "cuarta"', fontsize= 10)
+    fig_3.set_ylabel('Eje Y - Grafico 3', fontsize= 6)
+    fig_3.set_xlabel('Eje X - Grafico 3', fontsize= 6)
+    fig_3.legend('Y= X ** 4')
+
+    fig_4.scatter(x, y4, c='yellow')
+    fig_4.set_facecolor('white')
+    fig_4.grid(ls='dashed')
+    fig_4.set_title('Grafico "RAIZ', fontsize= 10)
+    fig_4.set_ylabel('Eje Y - Grafico 4', fontsize= 6)
+    fig_4.set_xlabel('Eje X - Grafico 4', fontsize= 6)
+    fig_4.legend('Y= np.sqrt(x)')
+
+    plt.show()
 
     print("terminamos")

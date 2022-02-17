@@ -21,7 +21,7 @@ if __name__ == '__main__':
     # Se desea graficar la función tanh para el siguiente
     # intervalor de valores de "X"
     x = np.arange(-np.pi, np.pi, 0.1)
-
+    #print(list(x))
     # Función y = tanh(x) --> tangente hiperbólica
     y = np.tanh(x)
 
@@ -34,4 +34,15 @@ if __name__ == '__main__':
 
     # Crear acá su gráfico
 
-    print("terminamos")
+    grafico = plt.figure()
+    grafico.suptitle('LINEA VS PUNTOS', fontsize=16)
+    ax1 = grafico.add_subplot(1, 2, 1)
+    ax2 = grafico.add_subplot(1, 2, 2)
+
+    ax1.plot(x, y, c='black')
+    ax1.set_facecolor('white')
+    ax1.grid('solid')
+    ax2.scatter(x, y, c='green')
+    ax2.set_facecolor('white')
+    ax2.grid('solid')
+    plt.show() 
